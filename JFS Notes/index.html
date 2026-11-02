@@ -124,14 +124,19 @@
             placeholder="e.g. Core Java, database concepts">
         <p id="jfsCount" aria-live="polite">3 notes available</p>
         <p id="jfsEmpty" class="empty" style="display:none">No matching notes found.</p>
-        <h2>Contents</h2><a class="note" href="Java%20Practice%20Lab.html"><span class="icon"
-                aria-hidden="true">🧪</span><span><strong>Java Practice Lab</strong><small>Run Java practice exercises
-                    in your browser</small></span></a><a class="note" href="Core%20Java.html"><span class="icon"
+        <h2>Contents</h2><a class="note" href="Core%20Java.html"><span class="icon"
                 aria-hidden="true">☕</span><span><strong>Core Java</strong><small>Open the Core Java study
                     notes</small></span></a><a class="note"
             href="Database%20Concepts%20for%20Java%20Developers.html"><span class="icon"
                 aria-hidden="true">🗃️</span><span><strong>Database Concepts for Java Developers</strong><small>Open the
                     handwritten database concepts notebook</small></span></a>
+					<a class="note"
+            href="JDBC%20and%20Hibernate.html"><span class="icon"
+                aria-hidden="true">🔌</span><span><strong>JDBC and Hibernate</strong><small>Open the
+                    handwritten JDBC and Hibernate concepts notebook</small></span></a>
+					<a class="note" href="Java%20Practice%20Lab.html"><span class="icon"
+                aria-hidden="true">🧪</span><span><strong>Java Practice Lab</strong><small>Run Java practice exercises
+                    in your browser</small></span></a>
     </main>
     <footer>Java Full Stack Notes · <a href="../index.html">Back to all topics</a></footer>
     <script>const jfsSearch = document.getElementById('jfsSearch'), jfsCards = [...document.querySelectorAll('main .note')], jfsEmpty = document.getElementById('jfsEmpty'), jfsCount = document.getElementById('jfsCount'); function jfsTokens(s) { return s.toLocaleLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(/\s+/).filter(Boolean) } jfsSearch.addEventListener('input', () => { const q = jfsTokens(jfsSearch.value); let n = 0; jfsCards.forEach(card => { const hay = jfsTokens(card.textContent + ' ' + card.getAttribute('href')); const match = q.every(term => hay.some(word => word.includes(term))); card.style.display = match ? 'flex' : 'none'; if (match) n++ }); jfsEmpty.style.display = n ? "none" : "block"; jfsCount.textContent = q.length ? (n ? String(n) + " matching note" + (n === 1 ? "" : "s") : "No matching notes found.") : "3 notes available" });</script>
