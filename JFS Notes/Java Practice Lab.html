@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A shareable Java coding practice lab with runnable exercises.">
+  <title>Java Practice Lab</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #203047;
+      --muted: #64748b;
+      --paper: #f7f8fb;
+      --card: #fff;
+      --line: #dce3ec;
+      --blue: #2459a6;
+      --blue-soft: #eaf1fb;
+      --green: #287555;
+      --shadow: 0 12px 34px #20304712
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.6 "Segoe UI", Arial, sans-serif
+    }
+
+    a {
+      color: var(--blue)
+    }
+
+    header {
+      background: linear-gradient(130deg, #193b66, #275f91);
+      color: white;
+      padding: 32px max(22px, calc((100% - 1080px)/2)) 28px
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: -.03em
+    }
+
+    header p {
+      margin: 7px 0 15px;
+      color: #e0ebf7
+    }
+
+    header nav a {
+      color: white
+    }
+
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 26px auto 50px
+    }
+
+    .intro,
+    .exercise,
+    .editor-card,
+    .note {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow)
+    }
+
+    .intro {
+      padding: 20px 24px;
+      margin-bottom: 20px
+    }
+
+    .intro p {
+      margin: .35rem 0
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      padding: 3px 10px;
+      font-size: .82rem;
+      font-weight: 650
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(255px, .75fr) minmax(0, 1.6fr);
+      gap: 20px;
+      align-items: start
+    }
+
+    .exercise {
+      padding: 18px;
+      position: sticky;
+      top: 16px
+    }
+
+    .exercise h2,
+    .editor-card h2 {
+      font-size: 1.1rem;
+      margin: 0 0 12px
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0 0 12px
+    }
+
+    .tab,
+    .exercise-btn,
+    .copy-btn {
+      font: inherit;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 8px 11px;
+      background: white;
+      color: var(--ink);
+      cursor: pointer
+    }
+
+    .tab[aria-selected=true],
+    .exercise-btn[aria-current=true] {
+      background: var(--blue-soft);
+      border-color: #9ebce3;
+      color: #173e72
+    }
+
+    .exercise-list {
+      display: grid;
+      gap: 7px
+    }
+
+    .exercise-btn {
+      text-align: left
+    }
+
+    .exercise-btn strong {
+      display: block;
+      font-size: .93rem
+    }
+
+    .exercise-btn small {
+      display: block;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    .details {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line)
+    }
+
+    .details h3 {
+      margin: 0 0 5px;
+      font-size: 1rem
+    }
+
+    .details p {
+      margin: 5px 0;
+      color: #394b60
+    }
+
+    .details ol {
+      padding-left: 21px;
+      margin: 8px 0
+    }
+
+    .hint {
+      background: #f3f7fc;
+      border-left: 3px solid #6f94c2;
+      padding: 9px 11px;
+      margin-top: 12px;
+      border-radius: 4px;
+      color: #394b60
+    }
+
+    .editor-card {
+      padding: 18px
+    }
+
+    .editor-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px
+    }
+
+    .editor-head h2 {
+      margin: 0
+    }
+
+    .copy-btn {
+      white-space: nowrap
+    }
+
+    .frame-wrap {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      min-height: 560px
+    }
+
+    .frame-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 560px;
+      border: 0
+    }
+
+    .status {
+      font-size: .9rem;
+      color: var(--muted);
+      margin: 9px 0 0
+    }
+
+    .privacy {
+      font-size: .9rem;
+      background: #fff8e8;
+      border: 1px solid #f1dfad;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 16px;
+      color: #584a2a
+    }
+
+    .foot {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 22px
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 8px
+    }
+
+    @media(max-width:760px) {
+      .layout {
+        grid-template-columns: 1fr
+      }
+
+      .exercise {
+        position: static
+      }
+
+      .frame-wrap,
+      .frame-wrap iframe {
+        min-height: 510px;
+        height: 510px
+      }
+
+      .editor-head {
+        align-items: flex-start;
+        flex-direction: column
+      }
+
+      header {
+        padding-top: 25px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Java Practice Lab</h1>
+    <p>Choose an exercise, write Java, run it, and use compiler feedback to improve your solution.</p>
+    <nav><a href="index.html">Java Full Stack Notes</a></nav>
+  </header>
+  <main>
+    <section class="intro">
+      <span class="tag">Browser-based · No JDK setup</span>
+      <p>This page uses OneCompiler’s embedded Java editor. Pick an exercise to load its starter code, then edit and run
+        it in the panel.</p>
+      <p><strong>Learning flow:</strong> read the task → predict the result → code → run → fix errors → try a variation.
+      </p>
+    </section>
+    <div class="layout">
+      <aside class="exercise" aria-label="Exercise selector">
+        <h2>Practice exercises</h2>
+        <div class="tabs" role="tablist" aria-label="Java topic">
+          <button class="tab" id="coreTab" role="tab" aria-selected="true">Core Java</button>
+          <button class="tab" id="oopTab" role="tab" aria-selected="false">OOP &amp; collections</button>
+          <button class="tab" id="advancedTab" role="tab" aria-selected="false">Advanced foundations</button>
+        </div>
+        <div class="exercise-list" id="exerciseList"></div>
+        <div class="details" aria-live="polite">
+          <h3 id="taskTitle">Loading exercise…</h3>
+          <p id="taskText"></p>
+          <ol id="taskSteps"></ol>
+          <p class="hint" id="taskHint"></p>
+        </div>
+      </aside>
+      <section class="editor-card" aria-label="Java code editor">
+        <div class="editor-head">
+          <h2>Write and run your solution</h2><button class="copy-btn" id="copyStarter" type="button">Copy starter
+            code</button>
+        </div>
+        <div class="frame-wrap"><iframe id="javaEditor" title="OneCompiler Java editor"
+            src="https://onecompiler.com/embed/java?hideLanguageSelection=true&amp;listenToEvents=true&amp;hideTitle=true"
+            loading="lazy" allow="clipboard-read; clipboard-write"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="status" id="editorStatus" role="status">Connecting to the online Java editor…</p>
+        <div class="privacy"><strong>About the runner:</strong> The editor and compiler are provided by OneCompiler.
+          Code you run is sent to that service for execution. This embedded runner is intended for short console
+          programs; do not enter passwords, private data, or secrets.</div>
+        <p class="foot">The exercises are learning prompts and starter examples. The compiler reports syntax and runtime
+          errors; it does not automatically grade your solution.</p>
+      </section>
+    </div>
+    <a class="back" href="index.html">← Back to Java Full Stack Notes</a>
+  </main>
+  <script>
+    const exercises = {
+      core: [
+        { title: '01 · Hello and variables', summary: 'Print values and combine text.', task: 'Print your name, a learning goal, and how many Java exercises you plan to complete.', steps: ['Declare a String and an int.', 'Print a sentence that uses both values.', 'Change the values and run again.'], hint: 'Use System.out.println(...) and the + operator.', code: 'public class Main {\n    public static void main(String[] args) {\n        String name = "Your name";\n        int exercises = 5;\n\n        // TODO: Print a sentence using both variables.\n    }\n}' },
+        { title: '02 · Conditions', summary: 'Classify a number with if/else.', task: 'Print whether the chosen integer is positive, negative, or zero.', steps: ['Create an int value.', 'Use if, else if, and else.', 'Try positive, negative, and zero values.'], hint: 'Compare the number with 0 using > and <.', code: 'public class Main {\n    public static void main(String[] args) {\n        int number = -4;\n\n        // TODO: Print positive, negative, or zero.\n    }\n}' },
+        { title: '03 · Loops and totals', summary: 'Add numbers from 1 through n.', task: 'Calculate the sum from 1 through 10 and print the result.', steps: ['Start a total at 0.', 'Use a for loop from 1 to 10 inclusive.', 'Add each loop value to the total.'], hint: 'The expected total for 1 through 10 is 55.', code: 'public class Main {\n    public static void main(String[] args) {\n        int total = 0;\n\n        // TODO: Add values 1 through 10 with a loop.\n\n        System.out.println("Total: " + total);\n    }\n}' },
+        { title: '04 · Methods', summary: 'Write and call a reusable method.', task: 'Create a method that converts Celsius to Fahrenheit.', steps: ['Write static double toFahrenheit(double celsius).', 'Use the formula (celsius * 9 / 5) + 32.', 'Call it from main and print the result.'], hint: 'Try 0°C; the result should be 32°F.', code: 'public class Main {\n    // TODO: Add a static conversion method.\n\n    public static void main(String[] args) {\n        // TODO: Call the method and print the result.\n    }\n}' }
+      ],
+      oop: [
+        { title: '05 · Classes and objects', summary: 'Model a simple BankAccount.', task: 'Create a BankAccount class with an owner, balance, and deposit method.', steps: ['Add fields for owner and balance.', 'Add deposit(amount), rejecting non-positive amounts.', 'Create an object and deposit money.'], hint: 'Keep fields private and expose a method to change balance.', code: 'class BankAccount {\n    // TODO: Add private fields, constructor, and deposit method.\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // TODO: Create an account, deposit, and print its balance.\n    }\n}' },
+        { title: '06 · Inheritance', summary: 'Use a base class and override.', task: 'Create an Animal class and a Dog subclass that gives its own sound.', steps: ['Add a speak() method to Animal.', 'Override speak() in Dog.', 'Call speak() using an Animal reference to a Dog.'], hint: 'Use @Override above the subclass method.', code: 'class Animal {\n    void speak() { System.out.println("..."); }\n}\n\nclass Dog extends Animal {\n    // TODO: Override speak().\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal pet = new Dog();\n        pet.speak();\n    }\n}' },
+        { title: '07 · ArrayList', summary: 'Store and process a list.', task: 'Store five integers in an ArrayList and print only the even values.', steps: ['Create an ArrayList<Integer>.', 'Add at least five values.', 'Loop through the list and test each value.'], hint: 'A number is even when number % 2 == 0.', code: 'import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<Integer> numbers = new ArrayList<>();\n        // TODO: Add values, then print only the even ones.\n    }\n}' }
+      ],
+      advanced: [
+        { title: '08 · Exceptions', summary: 'Handle invalid input safely.', task: 'Write a method that parses an integer and reports invalid text without crashing.', steps: ['Create a method that accepts a String.', 'Parse it with Integer.parseInt.', 'Catch NumberFormatException and show a helpful message.'], hint: 'Use try/catch and test both "42" and "four".', code: 'public class Main {\n    static void printNumber(String value) {\n        // TODO: Parse the value and handle NumberFormatException.\n    }\n\n    public static void main(String[] args) {\n        printNumber("42");\n        printNumber("four");\n    }\n}' },
+        { title: '09 · JDBC concepts', summary: 'Plan a safe database query.', task: 'This exercise is a design task: sketch the steps a JDBC method needs to fetch a customer by ID.', steps: ['Identify Connection, PreparedStatement, and ResultSet responsibilities.', 'Write a parameterized SQL query using ?.', 'Explain why try-with-resources matters.'], hint: 'This editor has no database configured. Use the Core Java panel to practice Java syntax; implement JDBC after connecting a database in a full IDE or hosted lab.', code: '// JDBC planning exercise — no database is configured in this editor.\n// 1. What JDBC objects do you need to query by customer ID?\n// 2. How does PreparedStatement help protect the query?\n// 3. Which resources should be closed?' },
+        { title: '10 · Web app foundations', summary: 'Map an HTTP request to Java layers.', task: 'Design the flow for a web request that loads a user profile.', steps: ['Name the controller/servlet responsibility.', 'Describe what a service layer should do.', 'Describe what a repository/data-access layer should do.'], hint: 'Servlet containers, Spring Boot, and HTTP server setup are not available in this console runner; use this as a planning prompt.', code: '// Web application design exercise — no server is configured here.\n// Draw or describe: HTTP request -> controller -> service -> repository -> response.' }
+      ]
+    };
+    const origin = 'https://onecompiler.com', frame = document.getElementById('javaEditor');
+    let category = 'core', selected = exercises.core[0], ready = false;
+    function loadCode(item) { selected = item; document.getElementById('taskTitle').textContent = item.title; document.getElementById('taskText').textContent = item.task; document.getElementById('taskHint').textContent = 'Hint: ' + item.hint; const steps = document.getElementById('taskSteps'); steps.replaceChildren(...item.steps.map(s => { const li = document.createElement('li'); li.textContent = s; return li })); renderList(); if (ready) { frame.contentWindow.postMessage({ eventType: 'populateCode', language: 'java', files: [{ name: 'Main.java', content: item.code }] }, origin) } }
+    function renderList() { const list = document.getElementById('exerciseList'); list.replaceChildren(...exercises[category].map(item => { const button = document.createElement('button'); button.type = 'button'; button.className = 'exercise-btn'; button.setAttribute('aria-current', item === selected ? 'true' : 'false'); const strong = document.createElement('strong'); strong.textContent = item.title; const small = document.createElement('small'); small.textContent = item.summary; button.append(strong, small); button.addEventListener('click', () => loadCode(item)); return button })) }
+    function setCategory(next) { category = next; document.querySelectorAll('.tab').forEach(tab => tab.setAttribute('aria-selected', String(tab.id === ({ core: 'coreTab', oop: 'oopTab', advanced: 'advancedTab' }[next])))); loadCode(exercises[category][0]) }
+    document.getElementById('coreTab').addEventListener('click', () => setCategory('core')); document.getElementById('oopTab').addEventListener('click', () => setCategory('oop')); document.getElementById('advancedTab').addEventListener('click', () => setCategory('advanced'));
+    frame.addEventListener('load', () => { ready = true; document.getElementById('editorStatus').textContent = 'Editor connected. Select an exercise if its starter code has not appeared yet.'; frame.contentWindow.postMessage({ eventType: 'populateCode', language: 'java', files: [{ name: 'Main.java', content: selected.code }] }, origin) });
+    document.getElementById('copyStarter').addEventListener('click', async () => { try { await navigator.clipboard.writeText(selected.code); document.getElementById('copyStarter').textContent = 'Copied'; setTimeout(() => document.getElementById('copyStarter').textContent = 'Copy starter code', 1400) } catch { document.getElementById('editorStatus').textContent = 'Clipboard access is unavailable here. Select a different exercise to try again.' } });
+    loadCode(selected);
+  </script>
+</body>
+
+</html>

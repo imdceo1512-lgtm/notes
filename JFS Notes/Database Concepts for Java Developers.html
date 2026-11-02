@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <title>Database Concepts for Java Developers - Editable Handwritten Notebook</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Kalam:wght@300;400;700&amp;display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Kalam:wght@300;400;700&amp;display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --ink-dark: #1f2421;
@@ -33,7 +37,7 @@
       margin-bottom: 25px;
       font-family: sans-serif;
       font-size: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
       display: flex;
       gap: 12px;
       align-items: center;
@@ -59,21 +63,19 @@
       font-size: 32px;
       margin-bottom: 15px;
       text-align: center;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .notebook-page {
       width: 920px;
       min-height: 1180px;
       background-color: var(--paper-bg);
-      background-image: repeating-linear-gradient(
-        transparent,
-        transparent 27px,
-        var(--line-color) 27px,
-        var(--line-color) 28px
-      );
+      background-image: repeating-linear-gradient(transparent,
+          transparent 27px,
+          var(--line-color) 27px,
+          var(--line-color) 28px);
       background-size: 100% 28px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.5), inset 20px 0 30px rgba(0,0,0,0.04);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), inset 20px 0 30px rgba(0, 0, 0, 0.04);
       position: relative;
       padding: 34px 38px 45px 82px;
       box-sizing: border-box;
@@ -157,17 +159,41 @@
       margin: 0;
     }
 
-    .indent-1 { padding-left: 28px; }
-    .indent-2 { padding-left: 56px; }
-    .indent-3 { padding-left: 84px; }
-    .indent-4 { padding-left: 112px; }
+    .indent-1 {
+      padding-left: 28px;
+    }
 
-    .underline { text-decoration: underline; }
-    .accent { color: var(--ink-accent); }
+    .indent-2 {
+      padding-left: 56px;
+    }
+
+    .indent-3 {
+      padding-left: 84px;
+    }
+
+    .indent-4 {
+      padding-left: 112px;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .accent {
+      color: var(--ink-accent);
+    }
 
     @media print {
-      body { background: none; padding: 0; }
-      .toolbar, .notebook-title { display: none; }
+      body {
+        background: none;
+        padding: 0;
+      }
+
+      .toolbar,
+      .notebook-title {
+        display: none;
+      }
+
       .notebook-page {
         box-shadow: none;
         margin: 0;
@@ -177,6 +203,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="notebook-title">Database Concepts for Java Developers</div>
@@ -190,7 +217,7 @@
   <!-- ==================== PAGE 1 (03/09/2026 - DB Basics) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 1</div>
-    
+
     <div class="date-badge">03/09/2026</div>
 
     <div class="row">
@@ -268,7 +295,8 @@
     <!-- Instagram Example & DB Types -->
     <div style="margin-top: 25px; font-size: 15.5px;">
       <b>Instagram</b> → Login → username, password → <b>structured → SQL</b><br>
-      <span class="indent-4">Scrolling data, Talking data, Photos, surfing → based on that it will suggest reels → <b>unstructured data → No SQL</b></span>
+      <span class="indent-4">Scrolling data, Talking data, Photos, surfing → based on that it will suggest reels →
+        <b>unstructured data → No SQL</b></span>
     </div>
 
     <div class="row" style="margin-top: 25px;">
@@ -289,7 +317,7 @@
   <!-- ==================== PAGE 2 (04/09/2026 - DDL) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 2</div>
-    
+
     <div class="date-badge">04/09/2026</div>
 
     <!-- SQL Categories -->
@@ -329,18 +357,18 @@
       <b><u>Create</u></b><br>
       ⇒ SQL Workbench<br>
       <div class="code-block indent-2">↪ Create database &lt;database-name&gt;;
-   Create database dummy;
-↪ show databases;
-↪ use &lt;database-name&gt;; → use dummy;</div>
-      
+        Create database dummy;
+        ↪ show databases;
+        ↪ use &lt;database-name&gt;; → use dummy;</div>
+
       <div style="margin-top: 15px;" class="indent-1">
         → <b>To Create Table</b><br>
         <div class="code-block indent-1">create table &lt;table-name&gt; ( column columntype );</div>
         <div class="code-block indent-1" style="margin-top: 10px;"><b>Ex:</b> create table employees (
-        id integer,
-        name varchar(20),
-        salary integer
-    );</div>
+          id integer,
+          name varchar(20),
+          salary integer
+          );</div>
       </div>
     </div>
 
@@ -359,9 +387,9 @@
         </div>
         <div style="width: 80%;">
           <div class="code-block">→ alter table employees add column dept varchar(10);
-→ alter table employees modify column name varchar(40);
-             ↪ (column option here is mandatory - for modify)
-→ alter table employees rename column dept to department;</div>
+            → alter table employees modify column name varchar(40);
+            ↪ (column option here is mandatory - for modify)
+            → alter table employees rename column dept to department;</div>
         </div>
       </div>
 
@@ -371,9 +399,9 @@
         </div>
         <div style="width: 80%;">
           <div class="code-block">→ To add a column at first :
-     alter table employees add column marks integer first;
-→ alter table employees drop column marks;
-     ↪ To drop a column</div>
+            alter table employees add column marks integer first;
+            → alter table employees drop column marks;
+            ↪ To drop a column</div>
         </div>
       </div>
     </div>
@@ -387,19 +415,19 @@
     <div class="row" style="margin-top: 10px;">
       <div style="width: 70%;">
         <div class="code-block">→ alter table employees add column marks integer after name;
-                                       ↪ (position based)</div>
+          ↪ (position based)</div>
         <div style="margin-top: 20px;">
           <b>→ To rename table</b><br>
           <div class="code-block indent-1">rename table &lt;old-name&gt; to &lt;new-name&gt;;
-→ rename table employees to students;</div>
+            → rename table employees to students;</div>
         </div>
-        
+
         <div style="margin-top: 20px;">
           <div class="code-block">→ alter table students add column marks integer first;</div>
           <span class="indent-4 accent">↪ (error)<br>↪ (duplicate column 'marks')</span>
         </div>
       </div>
-      
+
       <div class="hand-box" style="width: 25%; font-size: 14.5px;">
         first → have to mention<br>
         last → by default<br>
@@ -417,10 +445,11 @@
       <div style="width: 70%;">
         <b>→ Drop</b><br>
         <div class="code-block indent-1">drop table &lt;table-name&gt;;
-drop database &lt;database&gt;;</div>
+          drop database &lt;database&gt;;</div>
       </div>
       <div style="width: 28%; padding-top: 25px;" class="accent">
-        → (will drop both structure &amp; data)</div><div style="width: 28%; padding-top: 25px;" class="accent"><br></div>
+        → (will drop both structure &amp; data)</div>
+      <div style="width: 28%; padding-top: 25px;" class="accent"><br></div>
     </div>
 
     <!-- DML -->
@@ -428,7 +457,7 @@ drop database &lt;database&gt;;</div>
     <div class="indent-1">
       Insert<br>Update<br>Delete
     </div>
-    
+
     <div class="indent-1" style="margin-top: 10px; font-size: 15.5px;">
       <b>CRUD</b> → Create → Insert<br>
       <span class="indent-2">Read → Select</span><br>
@@ -441,15 +470,16 @@ drop database &lt;database&gt;;</div>
       <div style="width: 78%;">
         <b>→ Insert data into table</b><br>
         <div class="code-block indent-1">insert into &lt;table-name&gt; values ( &lt;values&gt; );
-insert into students values ( 1, 'SANDEEP', 99 );</div>
-        
-        <div class="code-block indent-1" style="margin-top: 15px;">insert into students values ( 3, 'Bhanu' ) (X) invalid query
-insert into students (id, name) values ( 3, 'Bhanu' ); (✔)</div>
+          insert into students values ( 1, 'SANDEEP', 99 );</div>
+
+        <div class="code-block indent-1" style="margin-top: 15px;">insert into students values ( 3, 'Bhanu' ) (X)
+          invalid query
+          insert into students (id, name) values ( 3, 'Bhanu' ); (✔)</div>
 
         <div class="code-block indent-1" style="margin-top: 15px;">* insert into students values
-       ( 2, 'sada', 99 ),
-       ( 3, 'Bhanu', 100 ),
-       ( 4, 'Bhan', 99 );</div>
+          ( 2, 'sada', 99 ),
+          ( 3, 'Bhanu', 100 ),
+          ( 4, 'Bhan', 99 );</div>
       </div>
       <div class="hand-box" style="width: 18%; font-size: 14px; text-align: center; margin-top: 55px;">
         To exclude<br>or insert only few column
@@ -460,15 +490,18 @@ insert into students (id, name) values ( 3, 'Bhanu' ); (✔)</div>
     <div class="row" style="margin-top: 25px;">
       <div style="width: 70%;">
         <div class="code-block">* update students set id = 6 ; → (will update all columns) (X)
-                                 ↪ (this is not valid)</div>
-        <div class="code-block" style="margin-top: 15px;">* update students set id = 6 
+          ↪ (this is not valid)</div>
+        <div class="code-block" style="margin-top: 15px;">* update students set id = 6
           where name = 'Bhanu'; (✔)</div>
-        
+
         <div class="code-block" style="margin-top: 15px;">→ delete from students; (X) (→ will delete all columns)</div>
         <span class="indent-4 accent">→ (need to use where)</span><br>
         <div class="code-block" style="margin-top: 5px;">delete from students where id = 4 ; (✔)</div>
-        <span class="indent-4 accent">↪ only data will be deleted<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: rgb(122, 32, 33);">↪</span><span style="color: rgb(122, 32, 33);"> </span><span style="color: rgb(122, 32, 33);">structure will be there</span></div>
-      
+        <span class="indent-4 accent">↪ only data will be deleted<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: rgb(122, 32, 33);">↪</span><span
+          style="color: rgb(122, 32, 33);"> </span><span style="color: rgb(122, 32, 33);">structure will be there</span>
+      </div>
+
       <div class="hand-box" style="width: 25%; font-size: 14.5px; margin-top: 10px;">
         (Set sql_safe_updates=0)<br>
         ↓<br>
@@ -480,7 +513,7 @@ insert into students (id, name) values ( 3, 'Bhanu' ); (✔)</div>
   <!-- ==================== PAGE 4 (07/09/2026 - DQL & TCL) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 4</div>
-    
+
     <div class="date-badge">7/9/2026</div>
 
     <!-- DQL -->
@@ -488,9 +521,9 @@ insert into students (id, name) values ( 3, 'Bhanu' ); (✔)</div>
     <div class="indent-1">
       ↪ <b>Select</b> → to query a table<br>
       <div class="code-block indent-1" style="margin-top: 10px;">↪ select &lt;columns&gt; from &lt;table&gt;;
-→ select * from employees;  ( → * → all columns )
-→ select name, id from employees; ( only two mentioned columns )
-→ select * from employees where id=1; ( only for few rows )</div>
+        → select * from employees; ( → * → all columns )
+        → select name, id from employees; ( only two mentioned columns )
+        → select * from employees where id=1; ( only for few rows )</div>
     </div>
 
     <div style="margin-top: 20px; font-size: 16px;">
@@ -528,13 +561,14 @@ insert into students (id, name) values ( 3, 'Bhanu' ); (✔)</div>
     <div style="margin-top: 25px;">
       <b><u>Save point</u></b>
       <div class="code-block indent-1" style="margin-top: 10px;">create table
-insert - 1 row
-commit
-insert - 2 row
-Save point savepoint1;
-insert - 3 row</div>
-      
-      <div class="code-block indent-1" style="margin-top: 15px;">roll back to savepoint1;  → To roll back to certain save point</div>
+        insert - 1 row
+        commit
+        insert - 2 row
+        Save point savepoint1;
+        insert - 3 row</div>
+
+      <div class="code-block indent-1" style="margin-top: 15px;">roll back to savepoint1; → To roll back to certain save
+        point</div>
       <span class="indent-4 accent">(Normal roll back will do till last commit)</span>
     </div>
 
@@ -564,18 +598,18 @@ insert - 3 row</div>
     <!-- Drop vs Delete vs Truncate -->
     <div style="margin-top: 25px;">
       <b>→ DROP (vs) DELETE (vs) TRUNCATE</b>
-      
+
       <div class="indent-1" style="margin-top: 10px;">
         <b>Drop</b> → delete the structure itself → (table / column / database)<br>
         <span class="indent-1">↪ can't be rolled back</span>
       </div>
-      
+
       <div class="indent-1" style="margin-top: 15px;">
         <b>Delete</b> → work with data only<br>
         <span class="indent-1">→ can be rolled back</span><br>
         <span class="indent-1">→ can delete specific/selected rows using (where)</span>
       </div>
-      
+
       <div class="indent-1" style="margin-top: 15px;">
         <b>Truncate</b> → deletes entire data from table.<br>
         <span class="indent-1">→ can't delete specific row/s</span><br>
@@ -585,7 +619,7 @@ insert - 3 row</div>
 
     <!-- DCL -->
     <div class="section-title" style="margin-top: 35px;">⇒ Data Control Language (DCL)</div>
-    
+
     <div style="margin-top: 15px;">
       <div class="row">
         <div style="width: 15%; font-size: 16px; font-weight: bold; text-align: right;">
@@ -611,7 +645,7 @@ insert - 3 row</div>
     <div style="margin-top: 25px;">
       * <b>(Grant)</b><br>
       &nbsp;&nbsp;<b>(Revoke)</b>
-      
+
       <div class="row" style="margin-top: 15px;">
         <div style="width: 75%;">
           <div class="code-block">→ Create user 'testuser'@'localhost' identified by 'test';</div>
@@ -630,22 +664,22 @@ insert - 3 row</div>
       <div class="row" style="margin-top: 15px;">
         <div style="width: 75%;">
           <div class="code-block">→ Grant select on students to testuser;
-                 ↪ (only select access) granted</div>
-          
+            ↪ (only select access) granted</div>
+
           <div class="code-block" style="margin-top: 10px;">→ Grant insert, update on students to testuser;
-                 ↪ (select, insert, update access)</div>
-                 
+            ↪ (select, insert, update access)</div>
+
           <div class="code-block" style="margin-top: 10px;">→ Revoke update on students from testuser;
-                 ↪ (to revoke access)</div>
-                 
+            ↪ (to revoke access)</div>
+
           <div class="code-block" style="margin-top: 10px;">→ Grant select on testdb.* to 'testuser'
-                 ↪ (to grant select on whole database testdb)
-         (database.*)</div>
+            ↪ (to grant select on whole database testdb)
+            (database.*)</div>
           <div class="code-block indent-3" style="margin-top: 5px;">↪ its → ('testuser'@'localhost')
-                  ↓
-                 (id)</div>
+            ↓
+            (id)</div>
         </div>
-        
+
         <div class="hand-box" style="width: 22%; font-size: 14px;">
           (can login as testuser by adding connection when starting app)
         </div>
@@ -657,12 +691,15 @@ insert - 3 row</div>
   <!-- ==================== PAGE 6 (08/09/2026 - IN, BETWEEN, IS NULL, Constraints) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 6</div>
-    
+
     <div class="date-badge">08/09/2026</div>
 
     <div class="row" style="margin-top: 5px;">
       <div style="width: 58%;">
-        <div class="code-block">→ select * from products where id in (1, 3, 5, 10)&nbsp;<br><div style="text-align: start;">→ select * from products where<span style="text-align: center; white-space: normal;">id not in (1, 3, 5)</span></div></div>
+        <div class="code-block">→ select * from products where id in (1, 3, 5, 10)&nbsp;<br>
+          <div style="text-align: start;">→ select * from products where<span
+              style="text-align: center; white-space: normal;">id not in (1, 3, 5)</span></div>
+        </div>
       </div>
       <div class="hand-box" style="width: 38%; font-size: 14.5px;">→ when id 7 is mentioned, Rows will displ<br>
         → when id is not mentioned, Rows will displ
@@ -682,7 +719,10 @@ insert - 3 row</div>
       <div style="width: 60%;">
         <div class="code-block">→ select * from products where name is null ;</div>
       </div>
-      <div style="width: 30%; font-size: 16px;" class="accent"><span style="background-color: rgba(255, 255, 255, 0.55); font-size: 14.5px; color: rgb(31, 36, 33);">→</span><span style="background-color: rgba(255, 255, 255, 0.55); font-size: 14.5px; color: rgb(31, 36, 33);"> </span>(to get Null records)
+      <div style="width: 30%; font-size: 16px;" class="accent"><span
+          style="background-color: rgba(255, 255, 255, 0.55); font-size: 14.5px; color: rgb(31, 36, 33);">→</span><span
+          style="background-color: rgba(255, 255, 255, 0.55); font-size: 14.5px; color: rgb(31, 36, 33);"> </span>(to
+        get Null records)
       </div>
     </div>
 
@@ -690,9 +730,11 @@ insert - 3 row</div>
     <div class="section-title" style="margin-top: 25px;">⇒ Constraints</div>
     <div class="indent-1" style="font-size: 16px; line-height: 30px;">
       1. <b>NOT NULL</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ should not be Null → Mandatory field<br>
-      2. <b>UNIQUE</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ should unique, not repeated → username, Aadhar<br>
+      2. <b>UNIQUE</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ should unique, not repeated → username,
+      Aadhar<br>
       3. <b>PRIMARY KEY</b> &nbsp;→ (Not null + unique) → id's → (1 table → 1 primary key)<br>
-      4. <b>CHECK</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ check (age &gt;= 18) (like if)<br>
+      4. <b>CHECK</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ check (age &gt;= 18) (like
+      if)<br>
       5. <b>DEFAULT</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ (Default values)<br>
       6. <b>AUTO INCREMENT</b> → (Auto increment by step size) (ex: id's generating → mostly on primary key)<br>
       7. <b>FOREIGN KEY</b> &nbsp;→ (primary key of another table)
@@ -702,11 +744,11 @@ insert - 3 row</div>
     <div class="row" style="margin-top: 35px;">
       <div style="width: 50%;">
         <div class="code-block">create table employees (
-   emp_id integer
-   name varchar(30) not null,
-   salary integer,
-   email varchar(20) unique
-);</div>
+          emp_id integer
+          name varchar(30) not null,
+          salary integer,
+          email varchar(20) unique
+          );</div>
       </div>
       <div class="hand-box" style="width: 45%; font-size: 14.5px;">
         <b>name</b> we should insert<br>
@@ -721,11 +763,11 @@ insert - 3 row</div>
     <div class="row" style="margin-top: 25px;">
       <div style="width: 55%;">
         <div class="code-block">create table voters (
-   voter_id integer primary key,
-   name varchar(20)
-   age integer check (age &gt;= 18)
-   country varchar(10) default 'INDIA'
-);</div>
+          voter_id integer primary key,
+          name varchar(20)
+          age integer check (age &gt;= 18)
+          country varchar(10) default 'INDIA'
+          );</div>
       </div>
       <div class="hand-box" style="width: 40%; font-size: 14.5px;">
         → voter_id → primary key, unique &amp; not Null<br>
@@ -739,10 +781,10 @@ insert - 3 row</div>
     <div class="row" style="margin-top: 25px;">
       <div style="width: 55%;">
         <div class="code-block">create table orders (
-   order_id int primary key auto_increment
-   itemCount integer,
-   orderedby varchar(20)
-);</div>
+          order_id int primary key auto_increment
+          itemCount integer,
+          orderedby varchar(20)
+          );</div>
       </div>
       <div class="hand-box" style="width: 40%; font-size: 14.5px;">
         → when we adding new val without order_id, then it will increment by 1.<br>
@@ -755,7 +797,7 @@ insert - 3 row</div>
   <!-- ==================== PAGE 7 (09/09/2026 - Soft Deletes, Foreign Keys) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 7</div>
-    
+
     <div class="date-badge">09/09/2026</div>
 
     <div style="margin-top: 10px;">
@@ -787,20 +829,20 @@ insert - 3 row</div>
 
     <div style="margin-top: 20px;">
       <div class="code-block">create table departments (
-   dept_id integer primary key auto_increment,
-   dept_name varchar(20)
-);</div>
+        dept_id integer primary key auto_increment,
+        dept_name varchar(20)
+        );</div>
     </div>
 
     <div style="margin-top: 20px;">
       <div class="code-block">create table employees (
-   emp_id integer primary key auto_increment,
-   emp_name varchar(25),
-   salary integer,
-   dept_id integer
-   
-   foreign key (dept_id) references departments(dept_id)
-);</div>
+        emp_id integer primary key auto_increment,
+        emp_name varchar(25),
+        salary integer,
+        dept_id integer
+
+        foreign key (dept_id) references departments(dept_id)
+        );</div>
     </div>
 
     <div style="margin-top: 25px; font-size: 16px;">
@@ -823,7 +865,7 @@ insert - 3 row</div>
     <div style="margin-top: 15px;">
       <b>→ count (*) → total count of rows</b><br>
       <div class="code-block indent-2">↪ select count(*) from students</div>
-      
+
       <div style="margin-top: 15px;">
         <b>→ count (name) → count of names → (not null value)</b><br>
         <div class="code-block indent-2">↪ select count(name) from student</div>
@@ -836,19 +878,21 @@ insert - 3 row</div>
         </div>
         <div style="width: 40%;">
           <table style="border-collapse: collapse; text-align: center; margin-top: 15px;">
-            <tbody><tr>
-              <th style="border: 1px solid #444; padding: 4px 15px;">total_count</th>
-              <td rowspan="2" style="padding: 0 15px; border: none;">without as</td>
-              <th style="border: 1px solid #444; padding: 4px 15px;">count(*)</th>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #444; padding: 4px 15px;">7</td>
-              <td style="border: 1px solid #444; padding: 4px 15px;">7</td>
-            </tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <th style="border: 1px solid #444; padding: 4px 15px;">total_count</th>
+                <td rowspan="2" style="padding: 0 15px; border: none;">without as</td>
+                <th style="border: 1px solid #444; padding: 4px 15px;">count(*)</th>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #444; padding: 4px 15px;">7</td>
+                <td style="border: 1px solid #444; padding: 4px 15px;">7</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      
+
       <div style="margin-top: 15px;" class="indent-1">
         * To get count number students in dept '2'<br>
         <div class="code-block indent-1">select count(*) from students where dept_id = 2;</div>
@@ -859,14 +903,14 @@ insert - 3 row</div>
     <div style="margin-top: 25px;">
       <b>→ Sum</b>
       <div class="code-block indent-2">↪ select sum(marks) from students;
-↪ select sum(marks) from student where dept_id = 1;</div>
-      
+        ↪ select sum(marks) from student where dept_id = 1;</div>
+
       <br><b>→ avg</b>
       <div class="code-block indent-2">→ select avg(marks) from students;</div>
 
       <br><b>→ max/min</b>
       <div class="code-block indent-2">→ select max(marks) from students;
-→ select min(marks) from students;</div>
+        → select min(marks) from students;</div>
     </div>
 
     <!-- ORDER BY -->
@@ -878,7 +922,7 @@ insert - 3 row</div>
         </div>
         <div style="width: 80%;">
           <div class="code-block">↪ select * from students order by marks;
-↪ select * from students order by marks Desc;</div>
+            ↪ select * from students order by marks Desc;</div>
           <div class="hand-box" style="margin-top: 5px; margin-left: 50px; font-size: 14.5px;">
             ↪ by default → it's Ascending order<br>
             ↪ for descending <b>Desc</b><br>
@@ -902,7 +946,8 @@ insert - 3 row</div>
         <div style="width: 80%;">
           <div class="code-block">↪ select * from students order by marks desc limit 3</div>
           <span class="indent-2">↪ first 3 rows</span><br>
-          <span class="indent-4">↪ which is having highest marks</span><div class="code-block" style="margin-top: 15px; margin-left: 100px;">limit 2, 1 ;</div>
+          <span class="indent-4">↪ which is having highest marks</span>
+          <div class="code-block" style="margin-top: 15px; margin-left: 100px;">limit 2, 1 ;</div>
           <span class="indent-4">↪ skip two rows &amp;&nbsp;</span><b>1 row print</b><br>
           <span class="indent-4"><b>(only print 3rd m)</b></span>
         </div>
@@ -912,8 +957,11 @@ insert - 3 row</div>
     <!-- GROUP BY Introduction -->
     <div style="margin-top: 25px;">
       <b>→ group by</b>
-      <div class="code-block indent-1" style="margin-top: 10px;">select  <span style="white-space: normal">count(*)&nbsp;</span><span style="white-space: normal">from students group by dept_id</span></div><div class="code-block indent-1" style="margin-top: 10px;">select dept_id, count(*) from students group by dept_id
-select dept_id, sum(marks) from students group by dept_id;</div>
+      <div class="code-block indent-1" style="margin-top: 10px;">select <span
+          style="white-space: normal">count(*)&nbsp;</span><span style="white-space: normal">from students group by
+          dept_id</span></div>
+      <div class="code-block indent-1" style="margin-top: 10px;">select dept_id, count(*) from students group by dept_id
+        select dept_id, sum(marks) from students group by dept_id;</div>
     </div>
 
   </div> <!-- End Page 8 -->
@@ -924,16 +972,16 @@ select dept_id, sum(marks) from students group by dept_id;</div>
 
     <div style="margin-top: 0;">
       <b>* Department count in which department have more than 2 students</b>
-      
+
       <div class="row" style="margin-top: 15px;">
         <div style="width: 65%;">
           <div class="code-block indent-1">(X) select dept_id, count(*) from students group by dept_id
-                                       where count(*) &gt; 2</div>
+            where count(*) &gt; 2</div>
           <br>
           <u><b>having</b></u><br>
           <div class="code-block indent-1">select dept_id, count(*) from students
-       group by dept_id
-       having count(*) &gt; 2 ;</div>
+            group by dept_id
+            having count(*) &gt; 2 ;</div>
         </div>
         <div class="hand-box" style="width: 30%; font-size: 14.5px;">
           ↓<br>
@@ -946,28 +994,29 @@ select dept_id, sum(marks) from students group by dept_id;</div>
     <div style="margin-top: 35px;">
       <b>* Department sum of marks, where sum of marks &gt; 100</b>
       <div class="code-block indent-2" style="margin-top: 10px;">select dept_id, sum(marks) from students
-       group by dept_id
-       having sum(marks) &gt; 100 ;</div>
+        group by dept_id
+        having sum(marks) &gt; 100 ;</div>
     </div>
 
     <div style="margin-top: 35px;">
       <b>* Count of students from each dept</b><br>
       <span class="indent-1">such that pick only students who scored above 95 marks</span><br>
       <span class="indent-1">and departments when students count atleast greater than 1</span>
-      
+
       <div class="code-block indent-1" style="margin-top: 15px;">select dept_id, count(*) from students
-       where marks &gt; 95
-       group by dept_id
-       having count(*) &gt; 1 ;</div>
+        where marks &gt; 95
+        group by dept_id
+        having count(*) &gt; 1 ;</div>
     </div>
 
     <div style="margin-top: 35px;">
       <b>* Maximum marks of each dept but consider only marks below 98</b><br>
       <span class="indent-1">such that max marks of dept is above 95</span>
-      
-      <div class="code-block indent-1" style="margin-top: 15px;">select dept_id, max(marks) from students where marks &lt; 98
-       group by dept_id
-       having max(marks) &gt; 95 ;</div>
+
+      <div class="code-block indent-1" style="margin-top: 15px;">select dept_id, max(marks) from students where marks
+        &lt; 98
+        group by dept_id
+        having max(marks) &gt; 95 ;</div>
     </div>
 
   </div> <!-- End Page 9 -->
@@ -975,23 +1024,45 @@ select dept_id, sum(marks) from students group by dept_id;</div>
   <!-- ==================== PAGE 14 (Rank vs Dense Rank & Indexes) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 14</div>
-    
+
     <div style="margin-top: 0;">
       <b>→ <u>Rank :</u></b>
       <div class="row" style="margin-top: 15px;">
         <div style="width: 58%;">
           <div class="code-block indent-1">Select employee_name, Salary,
-       Rank() over (order by salary desc)
-from employees ;</div>
+            Rank() over (order by salary desc)
+            from employees ;</div>
         </div>
         <div style="width: 40%;">
           <table class="rank-table">
-            <tbody><tr><td>Prija</td><td>25000</td><td>1</td></tr>
-            <tr><td>Phan</td><td>20000</td><td>2</td></tr>
-            <tr><td>Yem</td><td>20000</td><td>2</td></tr>
-            <tr><td>Pan</td><td>19000</td><td>4</td></tr>
-            <tr><td>Rag</td><td>15000</td><td>5</td></tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <td>Prija</td>
+                <td>25000</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Phan</td>
+                <td>20000</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Yem</td>
+                <td>20000</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Pan</td>
+                <td>19000</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Rag</td>
+                <td>15000</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
           <div style="margin-top: 10px; font-size: 14.5px;">
             ↙<br>
             3rd Rank is missing → as 2nd rank is having '2' times
@@ -1006,40 +1077,66 @@ from employees ;</div>
       <div class="row" style="margin-top: 15px;">
         <div style="width: 55%;">
           <div class="code-block indent-1">select emp_name, salary,
-       Dense_Rank() over (order by salary desc)
-                             ↓
-                          as rank
-                             ↓
-                          (alias)
-from emp ;</div>
+            Dense_Rank() over (order by salary desc)
+            ↓
+            as rank
+            ↓
+            (alias)
+            from emp ;</div>
         </div>
         <div style="width: 42%;">
           <div style="text-align: center; font-size: 14.5px; font-weight: bold; margin-bottom: 5px;">
             ↙ Dense Rank will consider duplicates
           </div>
           <table class="rank-table" style="margin-left: 20px;">
-            <tbody><tr><th></th><th></th><th>rank</th></tr>
-            <tr><td>Prija</td><td>25000</td><td>1</td></tr>
-            <tr><td>Phan</td><td>20000</td><td>2</td></tr>
-            <tr><td>Yem</td><td>20000</td><td>2</td></tr>
-            <tr><td>Pan</td><td>19000</td><td>3</td></tr>
-            <tr><td>Rag</td><td>18000</td><td>4</td></tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>rank</th>
+              </tr>
+              <tr>
+                <td>Prija</td>
+                <td>25000</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Phan</td>
+                <td>20000</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Yem</td>
+                <td>20000</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Pan</td>
+                <td>19000</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Rag</td>
+                <td>18000</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      
+
       <div class="indent-1" style="margin-top: 15px; font-size: 15.5px;">
         ↓<br>
         we can't apply where clause on Rank function<br>
         ↓<br>
         use sub queries<br>
-        
+
         <div class="code-block" style="margin-top: 10px;">select * from (
-       select emp_name, salary,
-       dense_rank() over (order by salary desc) as emp_rank,
-       from emp
-) emp
-where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
+          select emp_name, salary,
+          dense_rank() over (order by salary desc) as emp_rank,
+          from emp
+          ) emp
+          where emp_rank = 2 ; ⟶ to get second highest salary !</div>
       </div>
     </div>
 
@@ -1055,7 +1152,9 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
       <span class="indent-3">we will write 'Indexes'</span><br>
       <span class="indent-2">↙</span><br>
       <span class="indent-1">we need to create Index on column name</span><br>
-      <span class="indent-1">↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↙ (some temp table will created)</span><br>
+      <span class="indent-1">↓
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↙
+        (some temp table will created)</span><br>
       <span class="indent-1">Primary &amp; unique key</span><br>
       <span class="indent-3">indexes created automatically defaultly</span><br>
       <span class="indent-1">* write operations will be slower when indexes are there</span><br>
@@ -1068,26 +1167,26 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
       <div class="row" style="margin-top: 15px;">
         <div style="width: 48%;">
           ① <div class="code-block" style="display: inline-block; vertical-align: top;">create table employees (
-   emp_id integer primary key,
-   emp_name varchar(20),
-   salary integer,
-   city varchar(20),
-   index city_index (city)
-);</div>
+            emp_id integer primary key,
+            emp_name varchar(20),
+            salary integer,
+            city varchar(20),
+            index city_index (city)
+            );</div>
         </div>
         <div style="width: 48%;">
           ② <div class="code-block" style="display: inline-block; vertical-align: top;">create table _____
-   without index field
-   as normal table</div>
-          
+            without index field
+            as normal table</div>
+
           <div style="margin-top: 15px;">
             then<br>
             <div class="code-block indent-1">create Index city_index on
-             employees (city) ;</div>
+              employees (city) ;</div>
           </div>
         </div>
       </div>
-      
+
       <div class="row" style="margin-top: 25px;">
         <div style="width: 40%; font-size: 15.5px;">
           index works in background<br>
@@ -1096,14 +1195,18 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
         <div style="width: 58%;">
           <div class="code-block">show index from employees;</div>
           <table class="rank-table" style="margin-top: 10px; width: 100%; font-size: 14.5px;">
-            <tbody><tr>
-              <td>by default<br>created&nbsp;<span style="font-size: 15px; text-align: start;">→</span><br><span style="font-size: 15.5px; text-align: start;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ↙&nbsp;</span></td>
-              <td>Table<br>emp<br>emp</td>
-              <td>key_name<br>primary<br>city_idx</td>
-              <td>column<br>emp_id<br>city</td>
-              <td>index_type<br>Binary tree<br>Binary tree</td>
-            </tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <td>by default<br>created&nbsp;<span style="font-size: 15px; text-align: start;">→</span><br><span
+                    style="font-size: 15.5px; text-align: start;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    ↙&nbsp;</span></td>
+                <td>Table<br>emp<br>emp</td>
+                <td>key_name<br>primary<br>city_idx</td>
+                <td>column<br>emp_id<br>city</td>
+                <td>index_type<br>Binary tree<br>Binary tree</td>
+              </tr>
+            </tbody>
+          </table>
           <div style="font-size: 13px; margin-top: 15px;" class="indent-2">
             which we<br>created manually
           </div>
@@ -1129,11 +1232,13 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
         nvarchar →
       </div>
       <div style="width: 80%; line-height: 35px; font-size: 16px;">
-        <code>char(5)</code> → if we pass <code>'ABC'</code> → it will save <code>'ABC  '</code> ← (two spaces) &nbsp; <span class="accent">← fixed size</span><br>
-        
-        <code>varchar(5)</code> → <code>'ABC'</code> → <code>'ABC'</code> → <code>5 → upto 5</code> &nbsp; <span class="accent">↪ 5 means → 5 chars</span><br>
+        <code>char(5)</code> → if we pass <code>'ABC'</code> → it will save <code>'ABC  '</code> ← (two spaces) &nbsp;
+        <span class="accent">← fixed size</span><br>
+
+        <code>varchar(5)</code> → <code>'ABC'</code> → <code>'ABC'</code> → <code>5 → upto 5</code> &nbsp; <span
+          class="accent">↪ 5 means → 5 chars</span><br>
         <span class="indent-4">↪ 6 chars it won't (take)</span><br>
-        
+
         (Advanced version of varchar)<br>
         ↪ <code>nvarchar(5)</code> → support special chars<br>
         <span class="indent-4">↪ with some emojis as well</span>
@@ -1154,13 +1259,14 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
   <!-- ==================== PAGE 10 (11/09/2026 - LIKE & JOINS Intro) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 10</div>
-    
+
     <div class="date-badge">11/09/2026</div>
 
     <div class="section-title" style="margin-top: 0;">→ <u>Like</u></div>
     <div class="indent-1" style="font-size: 16px;">
       <code>%</code> → <code>E%</code> → EEE, ECE , &nbsp;&nbsp;&nbsp; <code>%E</code> → CSE, ECE, EEE<br>
-      <code>_</code> → <code>M_CH</code> → MECH , &nbsp;&nbsp;&nbsp; <code>__E</code> → CSE, EEE, ECE , &nbsp;&nbsp; <code>E_E</code> → ECE, EEE<br>
+      <code>_</code> → <code>M_CH</code> → MECH , &nbsp;&nbsp;&nbsp; <code>__E</code> → CSE, EEE, ECE , &nbsp;&nbsp;
+      <code>E_E</code> → ECE, EEE<br>
     </div>
 
     <div class="row" style="margin-top: 15px;">
@@ -1180,15 +1286,15 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
 
     <div style="margin-top: 25px;">
       <div class="code-block indent-1">→ select * from department where dept_name like 'C%'
-                                              ↪ CIVIL
-                                                 CSE</div>
-      <div class="code-block indent-1" style="margin-top: 10px;">→   "     "        "      "        "   like '___'
-                                              ↪ (all with 3 char)</div>
+        ↪ CIVIL
+        CSE</div>
+      <div class="code-block indent-1" style="margin-top: 10px;">→ " " " " " like '___'
+        ↪ (all with 3 char)</div>
     </div>
 
     <!-- JOINS Intro -->
     <div class="section-title" style="margin-top: 35px;">⇒ "JOINS" :</div>
-    
+
     <div class="row" style="margin-top: 10px;">
       <div style="width: 35%; font-size: 16px;" class="indent-1">
         → <b>Inner Join</b><br>
@@ -1205,31 +1311,31 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
     <div class="row" style="margin-top: 30px;">
       <div style="width: 30%;">
         <div class="code-block">create table departments(
-   dept_id integer primary key,
-   dept_name varchar(20)
-);</div>
+          dept_id integer primary key,
+          dept_name varchar(20)
+          );</div>
       </div>
       <div style="width: 35%;">
         <div class="code-block">create table managers(
-   manager_id integer primary key,
-   manager_name varchar(20),
-   dept_id integer,
-   foreign key (dept_id)
-     references departments(dept_id)
-);</div>
+          manager_id integer primary key,
+          manager_name varchar(20),
+          dept_id integer,
+          foreign key (dept_id)
+          references departments(dept_id)
+          );</div>
       </div>
       <div style="width: 33%;">
         <div class="code-block">create table employees(
-   emp_id integer primary key,
-   name varchar(20),
-   salary DECIMAL(10,2),
-   dept_id integer,
-   manager_id integer,
-   foreign key (dept_id)
-     references department(dept_id),
-   foreign key (manager_id)
-     references manager(manager_id)
-);</div>
+          emp_id integer primary key,
+          name varchar(20),
+          salary DECIMAL(10,2),
+          dept_id integer,
+          manager_id integer,
+          foreign key (dept_id)
+          references department(dept_id),
+          foreign key (manager_id)
+          references manager(manager_id)
+          );</div>
       </div>
     </div>
   </div> <!-- End Page 10 -->
@@ -1242,14 +1348,14 @@ where emp_rank = 2 ;      ⟶ to get second highest salary !</div>
     <div style="margin-top: 10px;">
       <b>→ <u>Inner Join</u></b><br>
       <span class="indent-2">↪ gives common data between tables</span>
-      
+
       <div class="row" style="margin-top: 10px;">
         <div style="width: 48%;">
           <div class="code-block">select e.emp_id, e.name, d.dept_name
-from employees e
-inner join
-departments d
-on e.dept_id = d.dept_id ;</div>
+            from employees e
+            inner join
+            departments d
+            on e.dept_id = d.dept_id ;</div>
         </div>
         <div style="width: 50%; font-size: 15px;" class="accent">
           → * won't give any data which doesn't match<br>
@@ -1265,10 +1371,10 @@ on e.dept_id = d.dept_id ;</div>
         <div style="width: 48%;">
           <span class="indent-2">↪ gives entire data on left table</span>
           <div class="code-block">select e.emp_id, e.name, d.dept_name
-from employees e
-left join
-departments d
-on e.dept_id = d.dept_id ;</div>
+            from employees e
+            left join
+            departments d
+            on e.dept_id = d.dept_id ;</div>
         </div>
         <div style="width: 50%; font-size: 14.5px;">
           → <b>(inner join + left table data)</b><br>
@@ -1287,10 +1393,10 @@ on e.dept_id = d.dept_id ;</div>
         <div style="width: 48%;">
           <span class="indent-2">↪ gives entire data on right table</span>
           <div class="code-block">select e.emp_id, e.name, d.dept_name
-from employees e
-Right join
-departments d
-on e.dept_id = d.dept_id ;</div>
+            from employees e
+            Right join
+            departments d
+            on e.dept_id = d.dept_id ;</div>
         </div>
         <div style="width: 50%; font-size: 14.5px;">
           → <b>(inner join + Right table data)</b><br>
@@ -1304,7 +1410,7 @@ on e.dept_id = d.dept_id ;</div>
 
     <!-- SVG Venn Diagrams -->
     <div class="venn-container">
-      
+
       <!-- Inner Join SVG -->
       <div class="venn-wrapper">
         <svg width="120" height="80" viewBox="0 0 120 80">
@@ -1342,19 +1448,27 @@ on e.dept_id = d.dept_id ;</div>
           <circle cx="45" cy="40" r="30" fill="url(#hatch)" stroke="#444" stroke-width="1.5"></circle>
           <circle cx="75" cy="40" r="30" fill="url(#hatch)" stroke="#444" stroke-width="1.5"></circle>
         </svg>
-        <span>Full&nbsp;</span></div><div class="venn-wrapper" style="width: 170px;">Join <span style="font-size: 13.5px; margin-top: 5px; line-height: 1.2;">↙ Full join<br>is not supported in mySQL DB </span><span style="font-size: 13.5px; line-height: 1.2;">← but can achieve by union of Left &amp; Right Join</span><span></span></div><div class="venn-wrapper" style="width: 170px;"><span><br></span></div><div class="venn-wrapper" style="width: 170px;"><span><br></span></div>
+        <span>Full&nbsp;</span>
+      </div>
+      <div class="venn-wrapper" style="width: 170px;">Join <span
+          style="font-size: 13.5px; margin-top: 5px; line-height: 1.2;">↙ Full join<br>is not supported in mySQL DB
+        </span><span style="font-size: 13.5px; line-height: 1.2;">← but can achieve by union of Left &amp; Right
+          Join</span><span></span></div>
+      <div class="venn-wrapper" style="width: 170px;"><span><br></span></div>
+      <div class="venn-wrapper" style="width: 170px;"><span><br></span></div>
     </div>
-    
+
     <div class="row" style="margin-top: 15px;">
       <div style="width: 25%; display: flex; justify-content: center;">
-        <div style="border: 2px solid #444; border-radius: 50%; width: 100px; height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 14px; background: rgba(0,0,0,0.02);">
-           <span>Select ===</span>
-           <span>Left Join</span>
-           <span>===</span>
-           <span>Union</span>
-           <span>Select ===</span>
-           <span>Right Join</span>
-           <span>=;</span>
+        <div
+          style="border: 2px solid #444; border-radius: 50%; width: 100px; height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 14px; background: rgba(0,0,0,0.02);">
+          <span>Select ===</span>
+          <span>Left Join</span>
+          <span>===</span>
+          <span>Union</span>
+          <span>Select ===</span>
+          <span>Right Join</span>
+          <span>=;</span>
         </div>
       </div>
       <div style="width: 70%; padding-top: 40px; font-size: 15.5px;">
@@ -1368,7 +1482,7 @@ on e.dept_id = d.dept_id ;</div>
   <!-- ==================== PAGE 12 (12/09/2026 - Cross, Natural, Self Join) ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
     <div class="page-num">Page 12</div>
-    
+
     <div class="date-badge">12/9/2026</div>
 
     <!-- Cross Join -->
@@ -1376,46 +1490,86 @@ on e.dept_id = d.dept_id ;</div>
       <b>→ <u>Cross Join</u></b><br>
       <span class="indent-2">↪ cartesian product</span><br>
       <span class="indent-3">↪ Every row in one table is multiplied with all rows of other table</span>
-      
+
       <!-- Table & Grid Doodles -->
       <div class="row" style="margin-top: 15px;">
         <div style="width: 35%;">
           <div class="code-block">create table clothes (
-  id int primary key
-  item_name varchar(20)
-  price int
-);</div>
+            id int primary key
+            item_name varchar(20)
+            price int
+            );</div>
         </div>
         <div style="width: 25%;">
           <table style="border:none; text-align:left; font-size:15px;">
-            <tbody><tr><td>→</td><td>1</td><td>Polo shirt</td><td>1900</td></tr>
-            <tr><td></td><td>2</td><td>Levi's Jean</td><td>2000</td></tr>
-            <tr><td></td><td>3</td><td>Zara Top</td><td>2099</td></tr>
-            <tr><td></td><td>4</td><td>plain Leggh</td><td>1000</td></tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <td>→</td>
+                <td>1</td>
+                <td>Polo shirt</td>
+                <td>1900</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>2</td>
+                <td>Levi's Jean</td>
+                <td>2000</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>3</td>
+                <td>Zara Top</td>
+                <td>2099</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>4</td>
+                <td>plain Leggh</td>
+                <td>1000</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div style="width: 25%; border-left: 1px solid #444; padding-left: 15px;">
           <div class="code-block">create table sizes (
-  size_id int
-  s_id varchar(5)
-);</div>
+            size_id int
+            s_id varchar(5)
+            );</div>
         </div>
         <div style="width: 15%;">
           <table style="border:none; text-align:left; font-size:15px;">
-            <tbody><tr><td>→</td><td>1</td><td>S</td></tr>
-            <tr><td></td><td>2</td><td>M</td></tr>
-            <tr><td></td><td>3</td><td>L</td></tr>
-            <tr><td></td><td>4</td><td>XL</td></tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <td>→</td>
+                <td>1</td>
+                <td>S</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>2</td>
+                <td>M</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>3</td>
+                <td>L</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>4</td>
+                <td>XL</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      
+
       <div class="row" style="margin-top: 25px;">
         <div style="width: 35%;">
           <div class="code-block">select c.item_name, s.size
-from clothes c
-cross join
-sizes s ;</div>
+            from clothes c
+            cross join
+            sizes s ;</div>
         </div>
         <div style="width: 40%; font-size: 15px;">
           → Polo shirt S<br>
@@ -1431,22 +1585,51 @@ sizes s ;</div>
           <!-- Custom Grid Doodles -->
           <div style="display: flex; gap: 15px; margin-bottom: 10px;">
             <table class="grid-doodle">
-              <tbody><tr><td></td><td></td><td></td></tr>
-              <tr><td></td><td></td><td></td></tr>
-              <tr><td></td><td></td><td></td></tr>
-            </tbody></table>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
             <table class="grid-doodle">
-              <tbody><tr><td></td><td></td><td></td></tr>
-              <tr><td></td><td></td><td></td></tr>
-              <tr><td></td><td></td><td></td></tr>
-            </tbody></table>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <div style="line-height: 22px; text-align: left; width: 100%;">
             &nbsp;&nbsp;1 → 4&nbsp; &nbsp; 3 → 4<br>
             &nbsp;&nbsp;2 → 4&nbsp; &nbsp;4 → 4<br>&nbsp; &nbsp; gives 16 rows
           </div>
           <div style="margin-top: 15px;">
-            <span class="circle-highlight" style="padding: 2px 6px;">m</span> x <span class="circle-highlight" style="padding: 2px 6px;">n</span> rows
+            <span class="circle-highlight" style="padding: 2px 6px;">m</span> x <span class="circle-highlight"
+              style="padding: 2px 6px;">n</span> rows
           </div>
         </div>
       </div>
@@ -1461,18 +1644,19 @@ sizes s ;</div>
         ↪ if not, it will do cross join<br>
         <span class="indent-2">↪ behavior is unpredictable</span>
       </div>
-      
+
       <div class="row" style="margin-top: 15px;">
         <div style="width: 60%;">
           <div class="code-block">select e.emp_name, d.dept_name
-from employees e
-natural join departments d ;</div>
+            from employees e
+            natural join departments d ;</div>
           <span style="font-size: 15px;">* if we renamed dept_id in department to other name</span><br>
           <span class="indent-2" style="font-size: 15px;">↪ the o/p will be like cross join</span>
         </div>
         <div style="width: 38%; font-size: 15px;" class="accent">
           → it will do join inner join on common column (dept_id)<br><br>
-          <div class="circle-highlight strike" style="padding: 10px; color: #666; border-color: #666;">Not recommended<br>in realtime (X)</div>
+          <div class="circle-highlight strike" style="padding: 10px; color: #666; border-color: #666;">Not
+            recommended<br>in realtime (X)</div>
         </div>
       </div>
     </div>
@@ -1481,25 +1665,55 @@ natural join departments d ;</div>
     <div style="margin-top: 25px;">
       <b>→ <u>Self Join</u></b><br>
       <span class="indent-2">↪ join with table itself.</span>
-      
+
       <div class="row" style="margin-top: 15px;">
         <div style="width: 50%;">
           <table style="border:none; text-align:left; font-size:15px; width: 100%;">
-            <tbody><tr><th>category_id</th><th>category_name</th><th>parent_category_id</th></tr>
-            <tr><td>1</td><td>Electronics</td><td>null</td></tr>
-            <tr><td>2</td><td>Furniture</td><td>null</td></tr>
-            <tr><td>3</td><td>clothes</td><td>null</td></tr>
-            <tr><td>4</td><td>Mobile</td><td>1</td></tr>
-            <tr><td>5</td><td>Sofa</td><td>2</td></tr>
-            <tr><td>6</td><td>Redmi Mobile</td><td>4</td></tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <th>category_id</th>
+                <th>category_name</th>
+                <th>parent_category_id</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Electronics</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Furniture</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>clothes</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Mobile</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Sofa</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Redmi Mobile</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div style="width: 45%;">
           <div class="code-block">create table category(
-  category_id integer,
-  category_name varchar(20),
-  parent_category_id int
-);</div>
+            category_id integer,
+            category_name varchar(20),
+            parent_category_id int
+            );</div>
         </div>
       </div>
     </div>
@@ -1514,40 +1728,77 @@ natural join departments d ;</div>
     <div class="row" style="margin-top: 10px;">
       <div style="width: 65%;">
         <div class="code-block">* select child.category_name as child_category,
-         parent.category_name as parent_category
-  from categories child
-  join categories parent
-  on child.parent_category_id = parent.category_id ;</div>
-        
+          parent.category_name as parent_category
+          from categories child
+          join categories parent
+          on child.parent_category_id = parent.category_id ;</div>
+
         <div class="code-block" style="margin-top: 20px;">* join → left join
-  from categorie child
-  left join categorie pa</div>
+          from categorie child
+          left join categorie pa</div>
         <span class="indent-3" style="font-size: 15px;">↪ give 'null' values of left table as well</span>
       </div>
-      
+
       <div style="width: 32%;">
         <table class="join-table" style="font-size: 14.5px; width: 100%;">
-          <tbody><tr><th>child_category</th><th>parent_cat</th></tr>
-          <tr><td>Mobile</td><td>Electronics</td></tr>
-          <tr><td>Sofa</td><td>Furniture</td></tr>
-          <tr><td>Redmi Mobile</td><td>Mobile</td></tr>
-        </tbody></table>
-        
+          <tbody>
+            <tr>
+              <th>child_category</th>
+              <th>parent_cat</th>
+            </tr>
+            <tr>
+              <td>Mobile</td>
+              <td>Electronics</td>
+            </tr>
+            <tr>
+              <td>Sofa</td>
+              <td>Furniture</td>
+            </tr>
+            <tr>
+              <td>Redmi Mobile</td>
+              <td>Mobile</td>
+            </tr>
+          </tbody>
+        </table>
+
         <div style="margin-top: 20px; font-size: 14.5px;">
           * here it's eliminated 'null' parent_id values
           <table class="join-table" style="width: 100%; margin-top: 5px;">
-            <tbody><tr><th>child_category</th><th>parent_cat</th></tr>
-            <tr><td>Electronics</td><td>null</td></tr>
-            <tr><td>Furniture</td><td>null</td></tr>
-            <tr><td>clothes</td><td>null</td></tr>
-            <tr><td>Mobile</td><td>Electronics</td></tr>
-            <tr><td>Sofa</td><td>Furniture</td></tr>
-            <tr><td>Redmi Mobile</td><td>Mobile</td></tr>
-          </tbody></table>
+            <tbody>
+              <tr>
+                <th>child_category</th>
+                <th>parent_cat</th>
+              </tr>
+              <tr>
+                <td>Electronics</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>Furniture</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>clothes</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>Mobile</td>
+                <td>Electronics</td>
+              </tr>
+              <tr>
+                <td>Sofa</td>
+                <td>Furniture</td>
+              </tr>
+              <tr>
+                <td>Redmi Mobile</td>
+                <td>Mobile</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    
+
     <div style="margin-top: 15px;">
       → <b>Right join</b> → can use Right join (by)<br>
       <span class="indent-4">↪ on parent.category_id = child.parent_category_id</span><br>
@@ -1560,14 +1811,14 @@ natural join departments d ;</div>
     <div style="margin-top: 10px;">
       → <b><u>getting highest salary</u></b>
       <div class="code-block indent-2">↪ select max(salary) from employees</div>
-      
+
       <div style="margin-top: 15px;">
         → <b><u>second highest salary</u></b>
         <div class="row">
           <div style="width: 50%;">
             <div class="code-block indent-2">↪ select salary from employees
-   order by salary desc
-   limit 1, 1 ;</div>
+              order by salary desc
+              limit 1, 1 ;</div>
           </div>
           <div style="width: 48%; font-size: 15px;">
             → will give values correctly<br>
@@ -1578,17 +1829,17 @@ natural join departments d ;</div>
           </div>
         </div>
       </div>
-      
+
       <div style="margin-top: 15px;">
         → <b><u>3rd highest</u></b> → <code>limit 2, 1 ;</code>
       </div>
-      
+
       <div class="row" style="margin-top: 15px;">
         <div style="width: 50%;">
           → <b><u>using distinct</u></b> →
           <div class="code-block indent-2">select distinct salary from employees
-order by salary desc
-limit 2, 1 ;</div>
+            order by salary desc
+            limit 2, 1 ;</div>
         </div>
         <div style="width: 48%; padding-top: 25px; font-size: 15px;">
           → (It will give as we removed duplicates)
@@ -1603,13 +1854,14 @@ limit 2, 1 ;</div>
       <div class="section-title" style="margin-top: 25px;">→ <u>Sub-Queries</u></div>
       <div class="indent-1">
         → query inside query
-        <div class="code-block indent-1" style="margin-top: 10px;">→ select max(salary) from employees where salary &lt; (select max(salary)
-                                                     from employees ) ;</div>
+        <div class="code-block indent-1" style="margin-top: 10px;">→ select max(salary) from employees where salary &lt;
+          (select max(salary)
+          from employees ) ;</div>
         <div style="margin-top: 10px; font-size: 15.5px;">
           ( &gt; 3rd → we need to write with another sub-query )<br>
           <span class="indent-2">↪ we can't do like that → (for nth highest)</span>
         </div>
-        
+
         <div style="margin-top: 15px;">
           <b>'Rank' &amp; 'Dense Rank'</b><br>
           <span class="indent-1">↪ to solve this</span>
@@ -1630,4 +1882,6 @@ limit 2, 1 ;</div>
     }
   </script>
 
-</body></html>
+</body>
+
+</html>
