@@ -304,221 +304,220 @@
     </div>
   </div> 
 
-  <!-- ==================== PAGE 3 (FLEX-ROW BULLETPROOF LAYOUT) ==================== -->
-  <div class="page3-container" contenteditable="true" spellcheck="false">
-    
-    <div class="page-num" style="left: 25px;">Page 3</div>
-    <div class="spine-center"></div>
+	 <!-- ==================== PAGE 3 ==================== -->
+  <div class="notebook-page" contenteditable="true" spellcheck="false">
+    <div class="page-num">Page 3</div>
 
-    <!-- ROW 1: Maven Diagram & DDL Info -->
-    <div class="flex-row" style="align-items: flex-start;">
-      <!-- Left: Maven Setup -->
-      <div class="col-left" style="align-items: flex-start; padding-top: 15px;">
-        <div style="display: flex; gap: 10px; font-size: 13.5px; line-height: 20px; width: 100%;">
-          
-          <div style="text-align: center;">
-            Search<br>mysql<br>connector<br>↓<br>Check<br>(Mysql Connector/J)<br>↓<br>JAR → download<br>(file)
-          </div>
-          
-          <div style="text-align: center;">
-            ← <span class="circle-highlight">Maven<br>Repository</span><br>↓<br>
-            <span class="circle-highlight" style="padding: 2px 10px;">(all JAR<br>files)</span><br>(mvnrepository.com)
-          </div>
-          
-          <div style="padding-left: 5px;">
-            <span class="circle-highlight" style="padding: 2px 6px;">Free<br>connection code</span> → we need to<br>
-            <div style="margin-left: 70px; margin-top: -10px;">add Connector ←</div>
-            <div style="text-align: center; margin-left: 50px;">↓<br>Mysql Connector<br>Oracle Connector<br>MSSQL Connector</div>
-            <div style="margin-top: 5px; text-align: right; margin-left: 10px;">↘ JAR file → (like zip file<br>but executable)<br>↪ Java Archive Files</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-gutter"></div>
-      
-      <!-- Right: DDL Notes & Class Header -->
-      <div class="col-right">
-        <div style="line-height: 22px; font-size: 14.5px;">
-          DDL → Create, Alter, rename (structure), truncate, drop<br>
-          <span class="accent" style="padding-left: 45px;">* we won't perform using code</span><br>
-          <hr style="border: 0; border-top: 1px dashed #666; margin: 4px 0; width: 90%;">
-          <div style="display: flex; gap: 15px; margin-top: 5px;">
-            <div>DML DQL →<br>↪ Insert<br>&nbsp;&nbsp;&nbsp;Update<br>&nbsp;&nbsp;&nbsp;Delete<br>&nbsp;&nbsp;&nbsp;Select</div>
-            <div>CRUD operations<br><div style="text-align: center; margin-top: -5px;">↓</div>we will do this<br>using JDBC</div>
-          </div>
-          <div style="margin-top: 5px;">↪ we can but we won't</div>
-        </div>
-        
-        <div class="code-block" style="margin-top: 20px;">→ "DML"
-public class DMLOperations {
-   public static void main (String[] args)
+      <!-- Header -->
+      <div class="flex-row" style="margin-top: 20px;">
+        <div class="col-left"></div>
+        <div class="col-code"><div class="code-block" style="text-decoration: underline; font-weight: bold; margin-bottom: 10px;"><span style="white-space: normal">* DML</span></div><div class="code-block" style="text-decoration: underline; font-weight: bold; margin-bottom: 10px;"><span style="color: rgb(31, 36, 33); font-size: 14.5px; font-weight: 400; white-space: normal;">DDL → Create, Alter, rename (structure), truncate, drop</span><br style="color: rgb(31, 36, 33); font-size: 14.5px; font-weight: 400; white-space: normal;"><span class="accent" style="color: rgb(122, 32, 33); font-size: 14.5px; font-weight: 400; white-space: normal; padding-left: 45px;">* we won't perform using code</span><br style="color: rgb(31, 36, 33); font-size: 14.5px; font-weight: 400; white-space: normal;"><hr style="font-size: 14.5px; font-weight: 400; white-space: normal; border-width: 1px 0px 0px; border-style: dashed none none; border-color: rgb(102, 102, 102) currentcolor currentcolor; border-image: none; margin: 4px 0px; width: 427.5px;"><div style="color: rgb(31, 36, 33); font-size: 14.5px; font-weight: 400; white-space: normal; display: flex; gap: 15px; margin-top: 5px;"><div>DML DQL →<br>↪ Insert<br>&nbsp;&nbsp;&nbsp;Update<br>&nbsp;&nbsp;&nbsp;Delete<br>&nbsp;&nbsp;&nbsp;Select</div><div>CRUD operations<br><div style="text-align: center; margin-top: -5px;">↓</div>we will do this<br>using JDBC</div></div><div style="color: rgb(31, 36, 33); font-size: 14.5px; font-weight: 400; white-space: normal; margin-top: 5px;">↪ we can but we won't</div></div><div class="code-block" style="text-decoration: underline; font-weight: bold; margin-bottom: 10px;"><br></div>
+          <div class="code-block">Public DML Operational {
+   Public static void main (String [] args)
    {
-      // Register a Driver
-      System.out.println("Starting to Register a Device");</div>
-      </div>
-    </div>
-
-    <!-- ROW 2: Class.forName Setup -->
-    <div class="flex-row">
-      <div class="col-left" style="gap: 20px;">
-        <div class="hand-box">Note: it will<br>throw error<br>(Class not found<br>Exception)</div>
-        <div class="hand-box">Class is a java.lang<br>package<br>No need to import<br>forName is static<br>method</div>
-      </div>
-      
-      <!-- Center SVG: Curves pointing right to Class.forName -->
-      <div class="col-gutter">
-        <svg width="40" height="120" style="overflow:visible;">
-          <path d="M 0,30 C 20,30 20,60 40,60" fill="none" stroke="#16325c" stroke-width="1.5" marker-end="url(#arrow-blue)"></path>
-          <path d="M 0,100 C 20,100 20,60 40,60" fill="none" stroke="#16325c" stroke-width="1.5" marker-end="url(#arrow-blue)"></path>
-        </svg>
-      </div>
-      
-      <div class="col-right" style="padding-top: 15px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div class="code-block">Class.forName("com.mysql.cj.jdbc.Driver");</div>
-          <div style="font-size: 14px; color: var(--ink-blue);">← class &nbsp;&nbsp; → package</div>
+      //Register a Driver
+      System.out.println("starting to 
+                     Register a Driver");</div>
         </div>
-        <div class="code-block">System.out.println("Driver Registered");</div>
       </div>
-    </div>
 
-    <!-- ROW 3: URL Setup -->
-    <div class="flex-row" style="margin-top: 10px;">
-      <div class="col-left">
-        <div class="hand-box">Right click<br>on db<br>in heidiSQL<br>Right click<br>↓<br>(copy JDBC string)</div>
-      </div>
-      
-      <!-- Center SVG: Curve pointing right to URL -->
-      <div class="col-gutter">
-        <svg width="40" height="60" style="overflow:visible;">
-          <path d="M 0,40 C 20,40 20,20 40,20" fill="none" stroke="#16325c" stroke-width="1.5" marker-end="url(#arrow-blue)"></path>
-        </svg>
-      </div>
-      
-      <div class="col-right">
-        <div class="code-block">// Establish Connection</div>
-        <div style="display: flex; gap: 10px; width: 100%;">
-          <div class="code-block" style="position: relative; z-index: 20;">String Url = "jdbc:mysql://localhost:3306/JDBC"</div>
-          <div style="font-size: 14px; color: var(--ink-blue); line-height: 20px;">
-            ← db → mysql<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;← (db name)<br>
-            ↪ Now its local, for aws(or)cloud<br>&nbsp;&nbsp;&nbsp;same config in that location
+      <!-- Class.forName Section -->
+      <div class="flex-row" style="margin-top: 15px; align-items: center;">
+        <div class="col-left" style="gap: 15px; flex-direction: row; align-items: center; justify-content: flex-end;">
+          <div style="text-align: center; font-size: 14.5px; line-height: 18px;">
+            So, No need<br>to import<br>package<br>and object<br>creation
           </div>
-        </div>
-        <div style="font-size: 14px; color: var(--ink-blue); padding-left: 170px; margin-top: -20px;">
-          ↑ (link/location) &nbsp;&nbsp;&nbsp; ↑ port no
-        </div>
-        <div class="code-block">String userName = "root";
-String password = "root";</div>
-      </div>
-    </div>
-
-    <!-- ROW 4: Connection Setup -->
-    <div class="flex-row" style="margin-top: 15px;">
-      <div class="col-left">
-        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">
-          <div style="text-align: center; font-size: 13.5px; line-height: 18px;">if we print<br>connection<br>object<br>↓<br>(it will give<br>hashcode)</div>
-          <div>←</div>
-          <div class="circle-highlight">Connection<br>class</div>
-          <div>←</div>
-          <div style="font-weight: bold; font-size: 15px;">(Java.sql)</div>
-        </div>
-      </div>
-      
-      <!-- Center SVG: Curve pointing right -->
-      <div class="col-gutter">
-        <svg width="40" height="40" style="overflow:visible;">
-          <path d="M 0,20 C 20,20 20,20 40,20" fill="none" stroke="#16325c" stroke-width="1.5" marker-end="url(#arrow-blue)"></path>
-        </svg>
-      </div>
-      
-      <div class="col-right">
-        <div style="display: flex; gap: 10px; width: 100%;">
-          <div class="code-block">DriverManager.getConnection(Url, userName, password);</div>
-          <div style="font-size: 14px; color: var(--ink-blue); line-height: 22px;">
-            ← static method<br>← returns Connection type
+          <div style="font-size: 20px; color: var(--ink-blue);">←</div>
+          <div class="circle-highlight" style="font-size: 14.5px; line-height: 18px; padding: 10px 15px;">
+            Class is<br>from<br>Java.lang<br>package<br>and forName<br>is static<br>method
           </div>
-        </div>
-        <div class="code-block">Connection connection = DriverManager.getConnection(Url, userName, password);
-System.out.println("Connection Established");</div>
-      </div>
-    </div>
-
-    <!-- ROW 5: Build Path & Statement -->
-    <div class="flex-row" style="margin-top: 15px;">
-      <div class="col-left" style="align-items: flex-start; padding-left: 20px; font-size: 14.5px; line-height: 24px;">
-        ↪ Right click → Build path → Configure<br>
-        <span style="margin-left: 20px;">(Java project)</span><span style="margin-left: 60px;">Build path → Libraries</span><br>
-        <div style="margin-left: 310px; font-size: 20px; color: #16325c;">↓</div>
-        <div style="margin-left: 280px; margin-top: -5px;">in module path<br>(or classpath)</div>
-        <div style="margin-left: 260px; font-size: 20px; color: #16325c; margin-top: 5px;">↙</div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span>Apply<br>(close)</span> ← <span>Add<br>downloaded<br>file</span> ← <span>Add<br>External<br>JAR</span>
-        </div>
-      </div>
-      
-      <div class="col-gutter"></div>
-      
-      <div class="col-right" style="padding-top: 20px;">
-        <div class="code-block">// Prepare a sql query
-String Insertquery = "insert into students values (1, 'Teja', 97)";
-
-// Create Statement
-Statement statement = connection.createStatement();</div>
-        <div style="font-size: 14px; color: var(--ink-blue); padding-left: 240px; line-height: 22px;">
-          ← Statement method<br>&nbsp;&nbsp;&nbsp;↪ is accessed<br>&nbsp;&nbsp;&nbsp;by connection object
-        </div>
-      </div>
-    </div>
-
-    <!-- ROW 6: Exception & Execute Update -->
-    <div class="flex-row" style="margin-top: 15px;">
-      <div class="col-left">
-        <!-- Imports Block -->
-        <div style="display: flex; gap: 15px; font-size: 14px; margin-bottom: 10px;">
-          <div>Enterprise<br>version<br>(File menu)</div>
-          <div style="border-left: 1px dashed #666; padding-left: 10px;"><u>Spring</u><br>Maven</div>
-        </div>
-        <div style="display: flex; justify-content: flex-end; gap: 10px; font-size: 14px;">
-          <div class="code-block" style="font-size: 14px; line-height: 22px;">import java.sql.Connection ;
-       "      "  .DriverManager ;
-       "      "  .SQLException ;
-       "      "  .Statement ;</div>
-          <div class="accent" style="line-height: 22px;">
-            → as of now<br>it try<br>&amp; catch<br><br>→ all<br>throws exception<br>in main!
-          </div>
-        </div>
-        <div class="code-block" style="font-size: 14px; text-align: left; margin-left: 160px; margin-bottom: 25px;">(or) import java.sql.* ;</div>
-
-        <!-- Exception Box with Anchor for the SNAKE LINE -->
-        <div class="accent" style="text-align: center; position: relative;">
-          ↙ (in end)<br>(Exception: No database selected)<br>where url don't have Db name
-          
-          <!-- The Absolute Snake Line -->
-          <!-- Overflow visible lets it curve upward from this text block to the URL string in Row 3 -->
-          <svg style="position: absolute; top: -350px; left: 85%; width: 280px; height: 380px; overflow: visible; pointer-events: none;">
-            <path d="M 0,360 C 150,380 200,80 275,10" fill="none" stroke="#7a2021" stroke-width="1.5" marker-end="url(#arrow-red)"></path>
-          </svg>
-        </div>
-      </div>
-      
-      <div class="col-gutter"></div>
-      
-      <div class="col-right">
-        <div class="code-block" style="display: flex; align-items: center; justify-content: space-between;">
-          <span>// Execute statement<br>statement.executeUpdate(Insertquery);</span>
-          <span style="font-size: 14px; padding-top: 25px;">← can used any DML operation</span>
+          <div style="font-size: 20px; color: var(--ink-blue);">←</div>
         </div>
         
-        <div class="code-block" style="margin-top: 15px;">// close the Resource
-connection.close();
-statement.close();
+        <div class="col-code">
+          <div class="code-block">      Class.forName("com.mysql.cj.jdbc.Driver");</div>
+          <div style="display: flex; gap: 70px; margin-left: 170px; font-size: 13.5px; line-height: 18px; color: var(--ink-blue); margin-top: -5px;">
+            <div style="text-align: center;">↓<br>Package</div>
+            <div style="text-align: center;">↓<br>class</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Driver Registered & Maven Flow -->
+      <div class="flex-row" style="margin-top: 10px;">
+        <div class="col-left">
+          <div style="text-align: center; font-size: 14.5px; line-height: 20px; margin-top: -20px; margin-right: 150px;">
+            for now, it will throw error<br>↓<br>Class Not found Exception
+          </div>
+          
+          <!-- Detailed Maven Flow Diagram -->
+          <div style="display: flex; font-size: 14.5px; line-height: 20px; margin-top: 15px;">
+            <div style="display: flex; flex-direction: column; align-items: center; margin-right: 15px;">
+              <div style="text-align: center;">We need to<br>Add Connector</div>
+              <div>↓</div>
+              <div style="text-align: center;">MySql Connector<br>Oracle Connector</div>
+              <div style="margin-bottom: -5px; margin-top: 5px;">↓</div>
+              <div style="text-align: center;">JAR file<br>↪ Java Archive<br>File</div>
+            </div>
+            
+            <div style="padding-top: 15px;">→</div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; margin-left: 15px; margin-right: 15px;">
+              <div class="circle-highlight">Maven<br>Repository</div>
+              <div>↓</div>
+              <div class="circle-highlight" style="padding: 15px;">All JAR<br>files</div>
+              <div style="font-size: 13px;">(mvn.repository.com)</div>
+            </div>
+            
+            <div style="padding-top: 5px; text-align: center;">
+              ↗ gives<br>free<br>Connector<br>Code
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 15px; font-size: 14.5px; margin-right: 35px; margin-top: 15px;">
+            <div class="circle-highlight" style="padding: 4px 10px;">Search<br>mysql Connector</div>
+            <div>→</div>
+            <div style="text-align: center;">Choose<br>(mysql connector)<br>↓<br>(JAR download)</div>
+          </div>
+        </div>
+        
+        <div class="col-code">
+          <div class="code-block">      System.out.println("Driver Registered");
+      
+      //Establish Connection
+      String url =
+         "jdbc : mysql : // localhost : 3306 / JDBC"</div>
+         
+         <div style="display: flex; gap: 20px; font-size: 13.5px; line-height: 18px; color: var(--ink-blue); margin-left: 95px;">
+           <div style="text-align: center;">↓<br>DB type</div>
+           <div style="text-align: center;">↓<br>Link/Location</div>
+           <div style="text-align: center;">↓<br>port</div>
+           <div style="text-align: center;">↓<br>db name</div>
+         </div>
+         
+         <div style="font-size: 14.5px; line-height: 22px; margin-left: 60px; margin-top: 5px;">
+           ↪ Right click on db in home page<br>
+           ↪ copy JDBC string in my sql workbench
+         </div>
+         
+         <div class="code-block" style="margin-top: 15px;">      String userName = "root";
+      String password = "root";</div>
+        </div>
+      </div>
+
+      <!-- Connection Setup & Build Path -->
+      <div class="flex-row" style="margin-top: 15px;">
+        <div class="col-left" style="align-items: center; margin-top: 40px; font-size: 14.5px;">
+          <!-- Build Path Diagram -->
+          <div style="text-align: center;">
+            (Right click on Java project)<br>
+            ↓<br>
+            Build path → Configure → Libraries<br>
+            <span style="margin-left: 80px;">Build path</span>
+          </div>
+          
+          <div style="display: flex; width: 100%; justify-content: flex-end; margin-top: -15px; margin-bottom: 5px;">
+            <div style="text-align: center; margin-right: 15px;">
+              ↓<br>in module<br>path/class<br>path
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="text-align: center; line-height: 18px;">Apply<br>&amp;<br>close</div>
+            <div>←</div>
+            <div style="text-align: center; line-height: 18px;">Add<br>downloaded<br>file</div>
+            <div>←</div>
+            <div class="circle-highlight" style="padding: 10px;">add<br>External<br>JAR</div>
+            <div>←</div>
+          </div>
+        </div>
+        
+        <div class="col-code">
+          <div style="display: flex; align-items: center; position: relative;">
+            <div style="font-size: 14.5px; border: 1.5px solid #444; border-radius: 50%; padding: 2px 8px; position: absolute; left: -85px;">java.sql</div>
+            <div style="position: absolute; left: -25px;">←</div>
+            <div class="code-block">      Connection connection =</div>
+            <div style="margin-left: 50px; text-align: center; font-size: 13.5px; color: var(--ink-blue);">
+              static method<br>↗
+            </div>
+          </div>
+          
+          <div class="code-block" style="margin-left: 70px;">DriverManager.getConnection(url, username,
+                                  password);</div>
+          <div class="code-block" style="margin-top: 10px;">      System.out.println("Connection Establish");
+      
+      //Prepare sql query
+      String InsertQuery = "Insert into Students
+                             values (1, \"Teja\", 97)"</div>
+        </div>
+      </div>
+
+      <!-- Execute Statement -->
+      <div class="flex-row" style="margin-top: 25px;">
+        <div class="col-left" style="align-items: flex-start; padding-left: 10px; font-size: 14.5px; line-height: 22px;">
+          If we print Connection<br>
+          <span style="margin-left: 30px;">Object</span> → It will give hashcode<br>
+          
+          <div style="margin-top: 15px;">
+            * if url don't have DB Name<br>
+            <span style="margin-left: 20px;">→ will get Exception: Nodatabase selected</span>
+          </div>
+        </div>
+        
+        <div class="col-code">
+          <div class="code-block">      // Create Statement
+      Statement statement = Connection.createStatement();</div>
+          <div style="text-align: right; margin-right: 150px; font-size: 13.5px; line-height: 18px; color: var(--ink-blue);">
+            ↓<br>Instance method <br> so using connection object
+          </div>
+          
+          <div class="code-block" style="margin-top: 5px;">      // Execute Statement
+      Statement.executeUpdate(insert query);</div>
+          <div style="margin-left: 120px; font-size: 14.5px; line-height: 22px;">
+            ↪ can be used for<br>
+            &nbsp;&nbsp;&nbsp;any DML Operation
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing Resources & Exceptions -->
+      <div class="flex-row" style="margin-top: 25px;">
+        <div class="col-left" style="align-items: flex-start; padding-left: 10px; font-size: 14.5px; line-height: 24px;">
+          * import java.sql.Connection;<br>
+          * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.DriverManager;<br>
+          * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.SQLException;<br>
+          * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Statement;<br>
+          
+          <div style="display: flex; align-items: center; margin-top: 10px;">
+            <div>(<br>&nbsp;&nbsp;import java.sql.*<br>)</div>
+            
+            <!-- Bracket connecting imports to exception note -->
+            <svg style="width: 30px; height: 100px; overflow: visible; margin-left: 5px; margin-top: -20px;">
+              <path d="M 0 0 C 15 0, 15 45, 25 45 C 15 45, 15 90, 0 90" fill="none" stroke="#16325c" stroke-width="1.5"></path>
+            </svg>
+            
+            <div style="margin-left: 10px; line-height: 18px;">
+              - for now<br>
+              instead of<br>
+              try &amp; catch<br>
+              ↓<br>
+              we can add<br>
+              throw Exception<br>
+              to main method
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-code">
+          <div class="code-block">      // Close the resources
+      Connection.close();
+      Statement.close();
    }
 }</div>
+        </div>
       </div>
-    </div>
 
-  </div> <!-- End Page 3 -->
+    </div> <!-- End Notebook Page --></div> 
 
   <!-- ==================== PAGE 4 ==================== -->
   <div class="notebook-page" contenteditable="true" spellcheck="false">
